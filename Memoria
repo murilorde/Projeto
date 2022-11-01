@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <time.h>
+#include <locale.h>
+
+void memoria();
+
+int main(){
+
+ setlocale(LC_ALL, "Portuguese_Brazil");
+ system("mode con:cols=100 lines=15");
+ memoria();
+}
+
+void memoria(){
+srand(time(NULL));
+int num2[50];
+int resposta[50];
+int num = 2, i, acertos = 0;
+
+    for(i=0; i < num; i++){
+    num2[i]=(rand () % 10);
+}
+for(i=0; i < num; i++){
+    printf("\n\n\n\n\n\t\t\t\t\t\t\%d", num2[i]);
+    sleep(2);
+    system("cls");
+}
+printf("Digite os números que apareceram na tela:\n\n");
+for(i=0;i<num;i++){
+printf("%d° Número: ", i+1);
+scanf("%d", &resposta[i]);
+if(resposta[i]==num2[i]){
+   acertos++;
+}
+}
+}
